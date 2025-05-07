@@ -1,20 +1,64 @@
-# Project XYZ
+# Health Insurance   
 
-**Project XYZ** is a comprehensive data analysis tool designed to streamline data exploration, analysis, and visualisation. The tool supports multiple data formats and provides an intuitive interface for both novice and expert data scientists.
+**Health Insurance** is a comprehensive data analysis tool designed to analyse healthcare metrics for streamlining data exploration and visualisation. The tool supports multiple data formats and provides an intuitive interface for both novice and expert data scientists.
 
-# ![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTqWlDP88eXtH5ivaYVlz5x6qn925dQe3VKew&s" width="100" height="100" /> 
+
 
 
 ## Dataset Content
-* Describe your dataset. Choose a dataset of reasonable size to avoid exceeding the repository's maximum size of 100Gb.
+* The Dataset was taken from the [Kaggel Health Insurance link](https://www.kaggle.com/datasets/willianoliveiragibin/healthcare-insurance). It is the Healthcare Insurance dataset, the location is USA and the shape of the dataset is 1338 rows by 7 columns. The size of the "insurance.csv" file is 55.63 kB. 
 
 
 ## Business Requirements
-* Describe your business requirements
+1. Personal attributes and Insurance cost   
+    - How does age influence insurance charges?
+     - How does smoking status affect insurance charges?
+    - Does BMI correlate with higher insurance costs? Is there a threshold BMI where costs spike?
+    - How does family size (no. of dependents) impact insurance costs?
+
+2. Geographic Influence
+    - Do people living in different regions (e.g., northeast, southeast, southwest, northwest) pay different average insurance premiums?
+    - Are there geographic regions where smoking or high BMI is more common, thereby influencing costs?
+
+3. Interaction Effects
+    - Does the combination of being a smoker and having a high BMI lead to disproportionately higher charges compared to either factor alone?
+    - Are older smokers charged even more than younger smokers, indicating an age-smoking interaction?
+    - Are there differences in the impact of BMI on costs between genders?
+
+4. Predictive Modeling
+    - Can we predict insurance charges accurately based on a person’s age, gender, BMI, number of children, smoking status, and region?
+    - Which features are the strongest predictors of insurance charges?
+
+5. Cost Optimization Insights
+    - What lifestyle changes (e.g., reducing BMI, quitting smoking) could significantly lower insurance costs according to the model?
+    - Can we identify "high-risk" profiles where costs are extremely high? What are their characteristics?
+
+ 6. What is the expected insurance cost for a non-smoking male in his 30s with a normal BMI across different regions?
+
+7. How much more does a smoker pay compared to a non-smoker on average?
+
+8. How much could insurance companies save by promoting smoking cessation programs?  
 
 
 ## Hypothesis and how to validate?
-* List here your project hypothesis(es) and how you envision validating it (them) 
+* List here your project hypothesis(es) and how you envision validating it (them)
+
+1. Our assumption is that because the age is increases, the BMI and charges increase.
+
+2. The insurance charges are likely to increase based on sex, smoker status and region. The regions of Northeast and Southeast the charges are higher because they are located along the coastline and harsh weather conditions.
+
+
+3. Predictive Analysis
+    - Descriptive Analysis:
+        - Average of age by BMI_range (plot 1)
+        - Average of charges by age (plot 2)
+        - Average of charges by age and region (plot 3)
+        - Average of charges by sex, smoker and region (plot 4) - stacked bar chart
+
+4. Correlation Analysis: 
+Scatterplot Between sex and bmi vs charges and trendline plotted.
+
 
 ## Project Plan
 * Outline the high-level steps taken for the analysis.
@@ -49,19 +93,36 @@
 * What challenges did you face, and what strategies were used to overcome these challenges?
 * What new skills or tools do you plan to learn next based on your project experience? 
 
-## Deployment
-### Heroku
+## Answers to Investigation Questions:
 
-* The App live link is: https://YOUR_APP_NAME.herokuapp.com/ 
-* Set the runtime.txt Python version to a [Heroku-20](https://devcenter.heroku.com/articles/python-support#supported-runtimes) stack currently supported version.
-* The project was deployed to Heroku using the following steps.
+1. Personal attributes and Insurance cost
+ - How does age influence insurance charges?
+    - Shows direct correlation between age and insurance cost. With increase in age likely to increase the cost of insurance.
 
-1. Log in to Heroku and create an App
-2. From the Deploy tab, select GitHub as the deployment method.
-3. Select your repository name and click Search. Once it is found, click Connect.
-4. Select the branch you want to deploy, then click Deploy Branch.
-5. The deployment process should happen smoothly if all deployment files are fully functional. Click now the button Open App on the top of the page to access your App.
-6. If the slug size is too large then add large files not required for the app to the .slugignore file.
+- How does smoking status affect insurance charges?
+    -   Smokers are charged higher insurance than non-smokers.
+ 
+- Does BMI correlate with higher insurance costs? Is there a threshold BMI where costs spike?
+    - The BMI doesn't have a direct correlation with higher insurance costs. The BMI is the measure of the person's body weight and height.
+
+- How does family size (no. of dependents) impact insurance costs?
+    - The insurance costs decrease in families with more than 3 children.
+2. Geographic Influence
+- Do people living in different regions (e.g., northeast, southeast, southwest, northwest) pay different average insurance premiums? Are there geographic regions where smoking or high BMI is more common, thereby influencing costs?
+    - There are more policy holders in the southeast region adding to more revenues.
+    - For non-smokers, the charge is regular, the trend line is straight line. For smokers, as soon as the BMI is above 30, the charge increases rapidly from 20k to about 33k. The region with high BMI does not indicate the significant difference in  high or low insurance costs. 
+3. Interaction Effects
+- Does the combination of being a smoker and having a high BMI lead to disproportionately higher charges compared to either factor alone?
+
+    - People with higher BMI and being Smoker tend to pay higher charges than having one factor alone.
+
+- Are older smokers charged even more than younger smokers, indicating an age-smoking interaction?
+    -   There is a slight difference in cost, but it is not significant. There is a high range between low and high cost of the same age So it is hard to tell the difference in cost..
+
+- Are there differences in the impact of BMI on costs between genders? 
+     -   The trend line for the cost per BMI fluctuates more with females compared to males. Females are paying more.
+
+
 
 
 ## Main Data Analysis Libraries
